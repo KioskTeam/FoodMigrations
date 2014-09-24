@@ -26,6 +26,13 @@ INSERT INTO restaurants (id, name, name_fa, address, address_fa)
 VALUES
     (1, 'Lobby', 'لابی', 'Tehran', 'تهران');
 
+INSERT INTO restaurant_galery (id, restaurant_id, image_id, description)
+VALUES
+    (1, 1, 23, '23'),
+    (2, 1, 24, '24'),
+    (3, 1, 25, '25'),
+    (4, 1, 26, '26');
+
 INSERT INTO food_categories (id, restaurant_id, name, name_fa, image_id)
 VALUES
     (1, 1, 'cat ?', 'ساندویچ (پنینی)', 23),
@@ -80,5 +87,6 @@ VALUES
 DELETE FROM foods_images;
 DELETE FROM foods;
 DELETE FROM food_categories;
+DELETE FROM restaurant_galery;
 DELETE FROM restaurants;
 DELETE FROM images;

@@ -24,6 +24,18 @@ CREATE TABLE restaurants (
   deleted_at timestamp DEFAULT null
 );
 
+CREATE TABLE restaurant_galery (
+  id serial PRIMARY KEY,
+
+  restaurant_id integer NOT NULL REFERENCES restaurants,
+  image_id      integer NOT NULL REFERENCES images,
+  description   text,
+
+  created_at timestamp DEFAULT current_timestamp,
+  updated_at timestamp DEFAULT current_timestamp,
+  deleted_at timestamp DEFAULT null
+);
+
 CREATE TABLE food_categories (
   id serial PRIMARY KEY,
 
@@ -69,6 +81,7 @@ CREATE TABLE foods_images (
 -- SQL section 'Down' is executed when this migration is rolled back
 DROP TABLE images,
            restaurants,
+           restaurant_galery,
            food_categories,
            foods,
            foods_images;
